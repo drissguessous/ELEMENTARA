@@ -1,0 +1,4 @@
+{
+  "trellis-community/TRELLIS": "connect failed: Client.__init__() got an unexpected keyword argument 'hf_token'",
+  "microsoft/TRELLIS": "connect failed: Client.__init__() got an unexpected keyword argument 'hf_token'"
+}
