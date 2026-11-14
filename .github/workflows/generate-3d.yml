@@ -1,0 +1,43 @@
+name: Generate 3D heroes (TRELLIS)
+
+# Converts the hero artworks into 3D models (GLB) and commits them to models/raw/.
+# Optional secret HF_TOKEN (free Hugging Face account) gives more GPU quota.
+on:
+  workflow_dispatch:
+    inputs:
+      heroes:
+        description: 'Comma-separated hero ids'
+        default: 'fire,water,wind,earth,light'
+      seed:
+        description: 'Random seed'
+        default: '1'
+  push:
+    branches: [main]
+    paths: ['tools/pipeline/request-3d.txt']
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install gradio_client
+      - name: Convert images to 3D
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HEROES: ${{ github.event.inputs.heroes || 'fire,water,wind,earth,light' }}
+          SEED: ${{ github.event.inputs.seed || '1' }}
+        run: python tools/pipeline/image_to_3d.py 2>&1 | tee models-generate.log
+      - name: Commit results
+        run: |
+          mkdir -p models/raw && cp models-generate.log models/raw/last-run.log
+          git config user.name "elementara-bot"
+          git config user.email "elementara-bot@users.noreply.github.com"
+          git add models/raw
+          git commit -m "chore(assets): 3D generation run ${{ github.run_number }}" || echo "nothing to commit"
+          git pull --rebase && git push
