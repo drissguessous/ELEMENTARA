@@ -60,7 +60,10 @@ for space in SPACES:
     if not todo:
         break
     try:
-        client = Client(space, hf_token=token)
+        try:
+            client = Client(space, token=token)
+        except TypeError:
+            client = Client(space, hf_token=token)
         print(client.view_api(return_format="str", print_info=False))
     except Exception as e:
         report[space] = f"connect failed: {e}"

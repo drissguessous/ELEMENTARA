@@ -35,7 +35,7 @@ jobs:
         run: python tools/pipeline/image_to_3d.py 2>&1 | tee models-generate.log
       - name: Commit results
         run: |
-          mkdir -p models/raw && cp models-generate.log models/raw/last-run.log
+          mkdir -p models/raw && cp models-generate.log models/raw/last-run.txt
           git config user.name "elementara-bot"
           git config user.email "elementara-bot@users.noreply.github.com"
           git add models/raw
