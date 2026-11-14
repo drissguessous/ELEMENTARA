@@ -1,0 +1,5 @@
+Loaded as API: https://trellis-community-trellis.hf.space
+{
+  "trellis-community/TRELLIS": "connect failed: The read operation timed out",
+  "microsoft/TRELLIS": "connect failed: The current space is in the invalid state: CONFIG_ERROR. Please contact the owner to fix this."
+}
