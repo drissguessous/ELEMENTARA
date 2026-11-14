@@ -1,5 +1,332 @@
+Traceback (most recent call last):
+  File "/home/runner/work/ELEMENTARA/ELEMENTARA/tools/pipeline/image_to_3d.py", line 74, in <module>
+    convert(client, hero)
+  File "/home/runner/work/ELEMENTARA/ELEMENTARA/tools/pipeline/image_to_3d.py", line 34, in convert
+    res = client.predict(
+          ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 606, in predict
+    ).result()
+      ^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 1707, in result
+    return super().result(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 1233, in _inner
+    predictions = _predict(*data, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 1356, in _predict
+    raise AppError(message=message, **result)
+gradio_client.exceptions.AppError: You have exceeded your ZeroGPU quota (120s requested vs. 144s left). Try again in 23:59:20. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+Traceback (most recent call last):
+  File "/home/runner/work/ELEMENTARA/ELEMENTARA/tools/pipeline/image_to_3d.py", line 74, in <module>
+    convert(client, hero)
+  File "/home/runner/work/ELEMENTARA/ELEMENTARA/tools/pipeline/image_to_3d.py", line 34, in convert
+    res = client.predict(
+          ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 606, in predict
+    ).result()
+      ^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 1707, in result
+    return super().result(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 1233, in _inner
+    predictions = _predict(*data, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 1356, in _predict
+    raise AppError(message=message, **result)
+gradio_client.exceptions.AppError: You have exceeded your ZeroGPU quota (120s requested vs. 144s left). Try again in 23:59:18. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+Traceback (most recent call last):
+  File "/home/runner/work/ELEMENTARA/ELEMENTARA/tools/pipeline/image_to_3d.py", line 74, in <module>
+    convert(client, hero)
+  File "/home/runner/work/ELEMENTARA/ELEMENTARA/tools/pipeline/image_to_3d.py", line 34, in convert
+    res = client.predict(
+          ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 606, in predict
+    ).result()
+      ^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 1707, in result
+    return super().result(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 1233, in _inner
+    predictions = _predict(*data, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 1356, in _predict
+    raise AppError(message=message, **result)
+gradio_client.exceptions.AppError: You have exceeded your ZeroGPU quota (120s requested vs. 144s left). Try again in 23:58:59. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
+Traceback (most recent call last):
+  File "/home/runner/work/ELEMENTARA/ELEMENTARA/tools/pipeline/image_to_3d.py", line 74, in <module>
+    convert(client, hero)
+  File "/home/runner/work/ELEMENTARA/ELEMENTARA/tools/pipeline/image_to_3d.py", line 34, in convert
+    res = client.predict(
+          ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 606, in predict
+    ).result()
+      ^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 1707, in result
+    return super().result(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 1233, in _inner
+    predictions = _predict(*data, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 1356, in _predict
+    raise AppError(message=message, **result)
+gradio_client.exceptions.AppError: You have exceeded your ZeroGPU quota (120s requested vs. 144s left). Try again in 23:58:57. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens
 Loaded as API: https://trellis-community-trellis.hf.space
+Client.predict() Usage Info
+---------------------------
+Named API endpoints: 12
+
+ - predict(api_name="/start_session") -> 
+    Parameters:
+     - None
+    Returns:
+     - None
+
+ - predict(api_name="/lambda") -> 
+    Parameters:
+     - None
+    Returns:
+     - None
+
+ - predict(api_name="/lambda_1") -> 
+    Parameters:
+     - None
+    Returns:
+     - None
+
+ - predict(image, api_name="/preprocess_image") -> image_prompt
+    Parameters:
+     - [Image] image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mime_type: str | None (mime type of image), is_stream: bool (Can always be set to False), meta: dict(str, Any)) (required)  (For input, either path or url must be provided. For output, path is always provided.) 
+    Returns:
+     - [Image] image_prompt: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mime_type: str | None (mime type of image), is_stream: bool (Can always be set to False), meta: dict(str, Any)) 
+
+ - predict(images, api_name="/preprocess_images") -> image_prompt
+    Parameters:
+     - [Gallery] images: list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mime_type: str | None (mime type of image), is_stream: bool (Can always be set to False), meta: dict(str, Any)), caption: str | None) | dict(video: filepath, caption: str | None)] (not required, defaults to:   [])  
+    Returns:
+     - [Gallery] image_prompt: list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mime_type: str | None (mime type of image), is_stream: bool (Can always be set to False), meta: dict(str, Any)), caption: str | None) | dict(video: filepath, caption: str | None)] 
+
+ - predict(randomize_seed, seed, api_name="/get_seed") -> seed
+    Parameters:
+     - [Checkbox] randomize_seed: bool (not required, defaults to:   True)  
+     - [Slider] seed: float (not required, defaults to:   0)  
+    Returns:
+     - [Slider] seed: float (numeric value between 0 and 2147483647) 
+
+ - predict(image, multiimages, seed, ss_guidance_strength, ss_sampling_steps, slat_guidance_strength, slat_sampling_steps, multiimage_algo, mesh_simplify, texture_size, api_name="/generate_and_extract_glb") -> (generated_3d_asset, extracted_glbgaussian, download_glb)
+    Parameters:
+     - [Image] image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mime_type: str | None (mime type of image), is_stream: bool (Can always be set to False), meta: dict(str, Any)) (required)  (For input, either path or url must be provided. For output, path is always provided.) 
+     - [Gallery] multiimages: list[dict(image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mime_type: str | None (mime type of image), is_stream: bool (Can always be set to False), meta: dict(str, Any)), caption: str | None) | dict(video: filepath, caption: str | None)] (not required, defaults to:   [])  
+     - [Slider] seed: float (not required, defaults to:   0)  
+     - [Slider] ss_guidance_strength: float (not required, defaults to:   7.5)  
+     - [Slider] ss_sampling_steps: float (not required, defaults to:   12)  
+     - [Slider] slat_guidance_strength: float (not required, defaults to:   3.0)  
+     - [Slider] slat_sampling_steps: float (not required, defaults to:   12)  
+     - [Radio] multiimage_algo: Literal['stochastic', 'multidiffusion'] (not required, defaults to:   stochastic)  
+     - [Slider] mesh_simplify: float (not required, defaults to:   0.95)  
+     - [Slider] texture_size: float (not required, defaults to:   1024)  
+    Returns:
+     - [Video] generated_3d_asset: dict(video: filepath, subtitles: filepath | None) 
+     - [Litmodel3d] extracted_glbgaussian: filepath 
+     - [Downloadbutton] download_glb: filepath 
+
+ - predict(api_name="/lambda_2") -> download_glb
+    Parameters:
+     - None
+    Returns:
+     - [Downloadbutton] download_glb: filepath 
+
+ - predict(api_name="/lambda_3") -> (download_glb, download_gaussian)
+    Parameters:
+     - None
+    Returns:
+     - [Downloadbutton] download_glb: filepath 
+     - [Downloadbutton] download_gaussian: filepath 
+
+ - predict(api_name="/extract_gaussian") -> (extracted_glbgaussian, download_gaussian)
+    Parameters:
+     - None
+    Returns:
+     - [Litmodel3d] extracted_glbgaussian: filepath 
+     - [Downloadbutton] download_gaussian: filepath 
+
+ - predict(api_name="/lambda_4") -> download_gaussian
+    Parameters:
+     - None
+    Returns:
+     - [Downloadbutton] download_gaussian: filepath 
+
+ - predict(api_name="/lambda_5") -> (download_glb, download_gaussian)
+    Parameters:
+     - None
+    Returns:
+     - [Downloadbutton] download_glb: filepath 
+     - [Downloadbutton] download_gaussian: filepath 
+
+fire -> ({'video': '/tmp/gradio/1577f849eb8dd4b2bd978eedf9e3ae3b202b4a6f2a42b6f9ab1ff30a49753149/sample.mp4', 'subtitles': None}, '/tmp/gradio/96488a47645a1ce35bb0d599000c041c83d7d40bfc839a5340aacabf503db773/sample.glb', '/tmp/gradio/96488a47645a1ce35bb0d599000c041c83d7d40bfc839a5340aacabf503db773/sample.glb')
+Loaded as API: https://microsoft-trellis-2.hf.space
+Client.predict() Usage Info
+---------------------------
+Named API endpoints: 7
+
+ - predict(api_name="/start_session") -> 
+    Parameters:
+     - None
+    Returns:
+     - None
+
+ - predict(input, api_name="/preprocess_image") -> image_prompt
+    Parameters:
+     - [Image] input: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mime_type: str | None (mime type of image), is_stream: bool (Can always be set to False), meta: dict(str, Any)) (required)  (For input, either path or url must be provided. For output, path is always provided.) 
+    Returns:
+     - [Image] image_prompt: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mime_type: str | None (mime type of image), is_stream: bool (Can always be set to False), meta: dict(str, Any)) 
+
+ - predict(randomize_seed, seed, api_name="/get_seed") -> seed
+    Parameters:
+     - [Checkbox] randomize_seed: bool (not required, defaults to:   True)  
+     - [Slider] seed: float (not required, defaults to:   0)  
+    Returns:
+     - [Slider] seed: float (numeric value between 0 and 2147483647) 
+
+ - predict(api_name="/lambda") -> 
+    Parameters:
+     - None
+    Returns:
+     - None
+
+ - predict(image, seed, resolution, ss_guidance_strength, ss_guidance_rescale, ss_sampling_steps, ss_rescale_t, shape_slat_guidance_strength, shape_slat_guidance_rescale, shape_slat_sampling_steps, shape_slat_rescale_t, tex_slat_guidance_strength, tex_slat_guidance_rescale, tex_slat_sampling_steps, tex_slat_rescale_t, api_name="/image_to_3d") -> 3d_asset_preview
+    Parameters:
+     - [Image] image: dict(path: str | None (Path to a local file), url: str | None (Publicly available url or base64 encoded image), size: int | None (Size of image in bytes), orig_name: str | None (Original filename), mime_type: str | None (mime type of image), is_stream: bool (Can always be set to False), meta: dict(str, Any)) (required)  (For input, either path or url must be provided. For output, path is always provided.) 
+     - [Slider] seed: float (not required, defaults to:   0)  
+     - [Radio] resolution: Literal['512', '1024', '1536'] (not required, defaults to:   1024)  
+     - [Slider] ss_guidance_strength: float (not required, defaults to:   7.5)  
+     - [Slider] ss_guidance_rescale: float (not required, defaults to:   0.7)  
+     - [Slider] ss_sampling_steps: float (not required, defaults to:   12)  
+     - [Slider] ss_rescale_t: float (not required, defaults to:   5.0)  
+     - [Slider] shape_slat_guidance_strength: float (not required, defaults to:   7.5)  
+     - [Slider] shape_slat_guidance_rescale: float (not required, defaults to:   0.5)  
+     - [Slider] shape_slat_sampling_steps: float (not required, defaults to:   12)  
+     - [Slider] shape_slat_rescale_t: float (not required, defaults to:   3.0)  
+     - [Slider] tex_slat_guidance_strength: float (not required, defaults to:   1.0)  
+     - [Slider] tex_slat_guidance_rescale: float (not required, defaults to:   0.0)  
+     - [Slider] tex_slat_sampling_steps: float (not required, defaults to:   12)  
+     - [Slider] tex_slat_rescale_t: float (not required, defaults to:   3.0)  
+    Returns:
+     - [Html] 3d_asset_preview: str 
+
+ - predict(api_name="/lambda_1") -> 
+    Parameters:
+     - None
+    Returns:
+     - None
+
+ - predict(decimation_target, texture_size, api_name="/extract_glb") -> (extracted_glb, download_glb)
+    Parameters:
+     - [Slider] decimation_target: float (not required, defaults to:   300000)  
+     - [Slider] texture_size: float (not required, defaults to:   2048)  
+    Returns:
+     - [Model3d] extracted_glb: filepath 
+     - [Downloadbutton] download_glb: filepath 
+Traceback (most recent call last):
+  File "/home/runner/work/ELEMENTARA/ELEMENTARA/tools/pipeline/image_to_3d.py", line 74, in <module>
+    convert(client, hero)
+  File "/home/runner/work/ELEMENTARA/ELEMENTARA/tools/pipeline/image_to_3d.py", line 33, in convert
+    img = client.predict(image=handle_file(url), api_name="/preprocess_image")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 604, in predict
+    return self.submit(
+           ^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 655, in submit
+    args = utils.construct_args(endpoint.parameters_info, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/utils.py", line 1409, in construct_args
+    raise TypeError(
+TypeError: Parameter `image` is not a valid key-word argument. Please click on 'view API' in the footer of the Gradio app to see usage.
+Traceback (most recent call last):
+  File "/home/runner/work/ELEMENTARA/ELEMENTARA/tools/pipeline/image_to_3d.py", line 74, in <module>
+    convert(client, hero)
+  File "/home/runner/work/ELEMENTARA/ELEMENTARA/tools/pipeline/image_to_3d.py", line 33, in convert
+    img = client.predict(image=handle_file(url), api_name="/preprocess_image")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 604, in predict
+    return self.submit(
+           ^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 655, in submit
+    args = utils.construct_args(endpoint.parameters_info, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/utils.py", line 1409, in construct_args
+    raise TypeError(
+TypeError: Parameter `image` is not a valid key-word argument. Please click on 'view API' in the footer of the Gradio app to see usage.
+Traceback (most recent call last):
+  File "/home/runner/work/ELEMENTARA/ELEMENTARA/tools/pipeline/image_to_3d.py", line 74, in <module>
+    convert(client, hero)
+  File "/home/runner/work/ELEMENTARA/ELEMENTARA/tools/pipeline/image_to_3d.py", line 33, in convert
+    img = client.predict(image=handle_file(url), api_name="/preprocess_image")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 604, in predict
+    return self.submit(
+           ^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 655, in submit
+    args = utils.construct_args(endpoint.parameters_info, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/utils.py", line 1409, in construct_args
+    raise TypeError(
+TypeError: Parameter `image` is not a valid key-word argument. Please click on 'view API' in the footer of the Gradio app to see usage.
+Traceback (most recent call last):
+  File "/home/runner/work/ELEMENTARA/ELEMENTARA/tools/pipeline/image_to_3d.py", line 74, in <module>
+    convert(client, hero)
+  File "/home/runner/work/ELEMENTARA/ELEMENTARA/tools/pipeline/image_to_3d.py", line 33, in convert
+    img = client.predict(image=handle_file(url), api_name="/preprocess_image")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 604, in predict
+    return self.submit(
+           ^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/client.py", line 655, in submit
+    args = utils.construct_args(endpoint.parameters_info, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/gradio_client/utils.py", line 1409, in construct_args
+    raise TypeError(
+TypeError: Parameter `image` is not a valid key-word argument. Please click on 'view API' in the footer of the Gradio app to see usage.
+
 {
-  "trellis-community/TRELLIS": "connect failed: The read operation timed out",
-  "microsoft/TRELLIS": "connect failed: The current space is in the invalid state: CONFIG_ERROR. Please contact the owner to fix this."
+  "trellis-community/TRELLIS:fire": "ok",
+  "trellis-community/TRELLIS:water": "failed: You have exceeded your ZeroGPU quota (120s requested vs. 144s left). Try again in 23:59:20. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens",
+  "trellis-community/TRELLIS:wind": "failed: You have exceeded your ZeroGPU quota (120s requested vs. 144s left). Try again in 23:59:18. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens",
+  "trellis-community/TRELLIS:earth": "failed: You have exceeded your ZeroGPU quota (120s requested vs. 144s left). Try again in 23:58:59. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens",
+  "trellis-community/TRELLIS:light": "failed: You have exceeded your ZeroGPU quota (120s requested vs. 144s left). Try again in 23:58:57. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens",
+  "microsoft/TRELLIS.2:water": "failed: Parameter `image` is not a valid key-word argument. Please click on 'view API' in the footer of the Gradio app to see usage.",
+  "microsoft/TRELLIS.2:wind": "failed: Parameter `image` is not a valid key-word argument. Please click on 'view API' in the footer of the Gradio app to see usage.",
+  "microsoft/TRELLIS.2:earth": "failed: Parameter `image` is not a valid key-word argument. Please click on 'view API' in the footer of the Gradio app to see usage.",
+  "microsoft/TRELLIS.2:light": "failed: Parameter `image` is not a valid key-word argument. Please click on 'view API' in the footer of the Gradio app to see usage."
 }
