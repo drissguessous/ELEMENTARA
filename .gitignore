@@ -5,3 +5,4 @@ dist/
 android/app/build/
 ios/App/Pods/
 .env
+public/models/preview/

@@ -76,6 +76,7 @@ const fr: Dict = {
   'limit.body': 'Le temps de jeu du jour est terminé. À demain, gardien !',
   'common.back': 'Retour',
   'common.min': 'min',
+  'preview.title': 'validation du modèle 3D',
 };
 
 const en: Dict = {
@@ -152,6 +153,7 @@ const en: Dict = {
   'limit.body': 'Today’s play time is over. See you tomorrow, guardian!',
   'common.back': 'Back',
   'common.min': 'min',
+  'preview.title': '3D model review',
 };
 
 const dicts: Record<string, Dict> = { fr, en };

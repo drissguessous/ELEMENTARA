@@ -4,9 +4,11 @@ import { StatusBar } from '@capacitor/status-bar';
 import { ScreenOrientation } from '@capacitor/screen-orientation';
 import { Game } from './core/game';
 import { repo } from './data/repository';
+import { heroById } from './config/heroes';
 import { nav } from './screens/nav';
 import { arenaScreen } from './screens/arena';
 import { parcoursScreen } from './screens/parcours';
+import { previewScreen } from './screens/preview';
 import {
   heroSelectScreen, leaderboardScreen, limitScreen, mapScreen, parentsScreen, resultScreen, titleScreen,
 } from './screens/menus';
@@ -49,6 +51,8 @@ async function boot() {
   const q = new URLSearchParams(location.search);
   if (q.get('demo') === '1') repo.loadDemo();
   if (q.get('hero')) repo.setHero(q.get('hero')!);
+  // QA: preview a candidate 3D model before validation, e.g. ?hero=fire&model=models/preview/fire.glb
+  if (q.get('model')) heroById(repo.profile().heroId).model = q.get('model');
   const screen = q.get('screen');
   const world = q.get('world') ?? 'volcano';
   if (screen === 'parcours') nav.parcours(world, Number(q.get('level') ?? 0));
@@ -57,6 +61,7 @@ async function boot() {
   else if (screen === 'map') nav.map();
   else if (screen === 'board') nav.leaderboard();
   else if (screen === 'parents') nav.parents();
+  else if (screen === 'preview') void game.go(previewScreen);
   else nav.title();
   (window as unknown as { __elementara: unknown }).__elementara = { game, nav, repo };
 }
