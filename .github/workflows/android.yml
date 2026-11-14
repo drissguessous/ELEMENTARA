@@ -1,0 +1,44 @@
+name: Android APK
+
+# Builds an installable Android APK on every push to main and publishes it
+# on the "latest-android" release: open it from the phone and install.
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['models/raw/**', 'tools/pipeline/**', 'docs/**', '*.md']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: '21' }
+      - uses: android-actions/setup-android@v3
+      - run: npm ci
+      - run: npm run build
+      - run: npx cap sync android
+      - name: Build debug APK
+        working-directory: android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon
+      - run: cp android/app/build/outputs/apk/debug/app-debug.apk Elementara.apk
+      - uses: actions/upload-artifact@v4
+        with: { name: Elementara-apk, path: Elementara.apk }
+      - name: Publish on the latest-android release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest-android
+          name: Elementara – dernière version Android
+          body: |
+            Version de test construite automatiquement depuis `main` (${{ github.sha }}).
+            Sur le téléphone : télécharger **Elementara.apk**, ouvrir, autoriser l'installation.
+          prerelease: true
+          files: Elementara.apk

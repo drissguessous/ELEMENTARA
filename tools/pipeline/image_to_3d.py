@@ -16,7 +16,7 @@ from gradio_client import Client, handle_file
 REPO_RAW = os.environ.get(
     "REPO_RAW", "https://raw.githubusercontent.com/drissguessous/elementara/main/public/assets/heroes"
 )
-SPACES = [s for s in os.environ.get("TRELLIS_SPACES", "trellis-community/TRELLIS,microsoft/TRELLIS").split(",") if s]
+SPACES = [s for s in os.environ.get("TRELLIS_SPACES", "trellis-community/TRELLIS,microsoft/TRELLIS.2").split(",") if s]
 HEROES = [h for h in os.environ.get("HEROES", "fire,water,wind,earth,light").split(",") if h]
 OUT = "models/raw"
 os.makedirs(OUT, exist_ok=True)
@@ -60,10 +60,11 @@ for space in SPACES:
     if not todo:
         break
     try:
+        kw = {"httpx_kwargs": {"timeout": 300}}
         try:
-            client = Client(space, token=token)
+            client = Client(space, token=token, **kw)
         except TypeError:
-            client = Client(space, hf_token=token)
+            client = Client(space, hf_token=token, **kw)
         print(client.view_api(return_format="str", print_info=False))
     except Exception as e:
         report[space] = f"connect failed: {e}"

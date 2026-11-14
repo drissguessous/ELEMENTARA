@@ -1,0 +1,956 @@
+{
+  "version": 1,
+  "description": "Simulated data for demos, R&D meetings and front-end testing. All players are fictional.",
+  "profiles": [
+    {
+      "id": "sim-01",
+      "nickname": "Yasmine",
+      "age": 13,
+      "heroId": "light",
+      "mode": "expert",
+      "levels": {
+        "volcano-0": {
+          "stars": 2,
+          "timeMs": 70659
+        },
+        "volcano-1": {
+          "stars": 1,
+          "timeMs": 32747
+        },
+        "volcano-2": {
+          "stars": 3,
+          "timeMs": 34168
+        },
+        "volcano-arena": {
+          "stars": 3,
+          "timeMs": 58965,
+          "won": true
+        },
+        "essaouira-0": {
+          "stars": 3,
+          "timeMs": 31801
+        }
+      },
+      "arenaWins": 4,
+      "arenaLosses": 0,
+      "totalStars": 12,
+      "playMinutes": 128,
+      "createdAt": "2026-10-14T11:00:00Z",
+      "simulated": true
+    },
+    {
+      "id": "sim-02",
+      "nickname": "Adam",
+      "age": 11,
+      "heroId": "light",
+      "mode": "easy",
+      "levels": {
+        "volcano-0": {
+          "stars": 3,
+          "timeMs": 55821
+        },
+        "volcano-1": {
+          "stars": 1,
+          "timeMs": 65057
+        },
+        "volcano-2": {
+          "stars": 1,
+          "timeMs": 42630
+        }
+      },
+      "arenaWins": 0,
+      "arenaLosses": 9,
+      "totalStars": 5,
+      "playMinutes": 639,
+      "createdAt": "2026-10-02T13:00:00Z",
+      "simulated": true
+    },
+    {
+      "id": "sim-03",
+      "nickname": "Lina",
+      "age": 8,
+      "heroId": "water",
+      "mode": "easy",
+      "levels": {
+        "volcano-0": {
+          "stars": 2,
+          "timeMs": 55468
+        },
+        "volcano-1": {
+          "stars": 1,
+          "timeMs": 63434
+        },
+        "volcano-2": {
+          "stars": 1,
+          "timeMs": 65415
+        },
+        "volcano-arena": {
+          "stars": 3,
+          "timeMs": 55216,
+          "won": true
+        },
+        "essaouira-0": {
+          "stars": 3,
+          "timeMs": 72695
+        }
+      },
+      "arenaWins": 2,
+      "arenaLosses": 9,
+      "totalStars": 10,
+      "playMinutes": 624,
+      "createdAt": "2026-09-12T11:00:00Z",
+      "simulated": true
+    },
+    {
+      "id": "sim-04",
+      "nickname": "Ilyas",
+      "age": 16,
+      "heroId": "light",
+      "mode": "expert",
+      "levels": {
+        "volcano-0": {
+          "stars": 3,
+          "timeMs": 31906
+        },
+        "volcano-1": {
+          "stars": 3,
+          "timeMs": 41497
+        },
+        "volcano-2": {
+          "stars": 2,
+          "timeMs": 72590
+        }
+      },
+      "arenaWins": 6,
+      "arenaLosses": 5,
+      "totalStars": 8,
+      "playMinutes": 516,
+      "createdAt": "2026-10-12T14:00:00Z",
+      "simulated": true
+    },
+    {
+      "id": "sim-05",
+      "nickname": "Salma",
+      "age": 11,
+      "heroId": "wind",
+      "mode": "easy",
+      "levels": {
+        "volcano-0": {
+          "stars": 3,
+          "timeMs": 79106
+        },
+        "volcano-1": {
+          "stars": 1,
+          "timeMs": 33364
+        },
+        "volcano-2": {
+          "stars": 3,
+          "timeMs": 47677
+        },
+        "volcano-arena": {
+          "stars": 3,
+          "timeMs": 69419,
+          "won": true
+        },
+        "essaouira-0": {
+          "stars": 2,
+          "timeMs": 50510
+        },
+        "essaouira-1": {
+          "stars": 3,
+          "timeMs": 57414
+        }
+      },
+      "arenaWins": 10,
+      "arenaLosses": 1,
+      "totalStars": 15,
+      "playMinutes": 160,
+      "createdAt": "2026-10-06T15:00:00Z",
+      "simulated": true
+    },
+    {
+      "id": "sim-06",
+      "nickname": "Rayan",
+      "age": 10,
+      "heroId": "earth",
+      "mode": "easy",
+      "levels": {
+        "volcano-0": {
+          "stars": 2,
+          "timeMs": 30569
+        },
+        "volcano-1": {
+          "stars": 3,
+          "timeMs": 33086
+        },
+        "volcano-2": {
+          "stars": 3,
+          "timeMs": 65553
+        },
+        "volcano-arena": {
+          "stars": 3,
+          "timeMs": 86714,
+          "won": true
+        },
+        "essaouira-0": {
+          "stars": 2,
+          "timeMs": 50290
+        },
+        "essaouira-1": {
+          "stars": 3,
+          "timeMs": 50949
+        },
+        "essaouira-2": {
+          "stars": 3,
+          "timeMs": 60550
+        },
+        "essaouira-arena": {
+          "stars": 3,
+          "timeMs": 73004,
+          "won": true
+        },
+        "atlas-0": {
+          "stars": 2,
+          "timeMs": 32506
+        },
+        "atlas-1": {
+          "stars": 1,
+          "timeMs": 45690
+        },
+        "atlas-2": {
+          "stars": 2,
+          "timeMs": 73681
+        },
+        "atlas-arena": {
+          "stars": 3,
+          "timeMs": 78525,
+          "won": true
+        },
+        "merzouga-0": {
+          "stars": 1,
+          "timeMs": 31976
+        },
+        "merzouga-1": {
+          "stars": 3,
+          "timeMs": 73972
+        },
+        "merzouga-2": {
+          "stars": 2,
+          "timeMs": 70410
+        },
+        "merzouga-arena": {
+          "stars": 3,
+          "timeMs": 72876,
+          "won": true
+        }
+      },
+      "arenaWins": 8,
+      "arenaLosses": 6,
+      "totalStars": 39,
+      "playMinutes": 724,
+      "createdAt": "2026-10-01T17:00:00Z",
+      "simulated": true
+    },
+    {
+      "id": "sim-07",
+      "nickname": "Inès",
+      "age": 13,
+      "heroId": "earth",
+      "mode": "expert",
+      "levels": {
+        "volcano-0": {
+          "stars": 3,
+          "timeMs": 35673
+        },
+        "volcano-1": {
+          "stars": 2,
+          "timeMs": 31863
+        },
+        "volcano-2": {
+          "stars": 1,
+          "timeMs": 78346
+        },
+        "volcano-arena": {
+          "stars": 3,
+          "timeMs": 53837,
+          "won": true
+        },
+        "essaouira-0": {
+          "stars": 1,
+          "timeMs": 76389
+        },
+        "essaouira-1": {
+          "stars": 1,
+          "timeMs": 54076
+        }
+      },
+      "arenaWins": 8,
+      "arenaLosses": 1,
+      "totalStars": 11,
+      "playMinutes": 210,
+      "createdAt": "2026-10-13T18:00:00Z",
+      "simulated": true
+    },
+    {
+      "id": "sim-08",
+      "nickname": "Youssef",
+      "age": 12,
+      "heroId": "water",
+      "mode": "expert",
+      "levels": {
+        "volcano-0": {
+          "stars": 2,
+          "timeMs": 64059
+        },
+        "volcano-1": {
+          "stars": 2,
+          "timeMs": 74294
+        },
+        "volcano-2": {
+          "stars": 2,
+          "timeMs": 51512
+        },
+        "volcano-arena": {
+          "stars": 3,
+          "timeMs": 79742,
+          "won": true
+        },
+        "essaouira-0": {
+          "stars": 2,
+          "timeMs": 43122
+        }
+      },
+      "arenaWins": 2,
+      "arenaLosses": 2,
+      "totalStars": 11,
+      "playMinutes": 194,
+      "createdAt": "2026-09-22T13:00:00Z",
+      "simulated": true
+    },
+    {
+      "id": "sim-09",
+      "nickname": "Aya",
+      "age": 8,
+      "heroId": "earth",
+      "mode": "easy",
+      "levels": {
+        "volcano-0": {
+          "stars": 3,
+          "timeMs": 39950
+        },
+        "volcano-1": {
+          "stars": 2,
+          "timeMs": 46476
+        },
+        "volcano-2": {
+          "stars": 1,
+          "timeMs": 37547
+        },
+        "volcano-arena": {
+          "stars": 3,
+          "timeMs": 62456,
+          "won": true
+        },
+        "essaouira-0": {
+          "stars": 3,
+          "timeMs": 52199
+        },
+        "essaouira-1": {
+          "stars": 3,
+          "timeMs": 65115
+        },
+        "essaouira-2": {
+          "stars": 2,
+          "timeMs": 36224
+        },
+        "essaouira-arena": {
+          "stars": 3,
+          "timeMs": 80252,
+          "won": true
+        },
+        "atlas-0": {
+          "stars": 3,
+          "timeMs": 68474
+        },
+        "atlas-1": {
+          "stars": 3,
+          "timeMs": 72315
+        },
+        "atlas-2": {
+          "stars": 3,
+          "timeMs": 31538
+        },
+        "atlas-arena": {
+          "stars": 3,
+          "timeMs": 64926,
+          "won": true
+        },
+        "merzouga-0": {
+          "stars": 3,
+          "timeMs": 64652
+        },
+        "merzouga-1": {
+          "stars": 2,
+          "timeMs": 54087
+        },
+        "merzouga-2": {
+          "stars": 2,
+          "timeMs": 53829
+        },
+        "merzouga-arena": {
+          "stars": 3,
+          "timeMs": 41785,
+          "won": true
+        }
+      },
+      "arenaWins": 14,
+      "arenaLosses": 6,
+      "totalStars": 42,
+      "playMinutes": 103,
+      "createdAt": "2026-09-03T13:00:00Z",
+      "simulated": true
+    },
+    {
+      "id": "sim-10",
+      "nickname": "Nassim",
+      "age": 15,
+      "heroId": "light",
+      "mode": "expert",
+      "levels": {
+        "volcano-0": {
+          "stars": 1,
+          "timeMs": 50285
+        },
+        "volcano-1": {
+          "stars": 3,
+          "timeMs": 31445
+        },
+        "volcano-2": {
+          "stars": 1,
+          "timeMs": 28015
+        },
+        "volcano-arena": {
+          "stars": 3,
+          "timeMs": 72144,
+          "won": true
+        },
+        "essaouira-0": {
+          "stars": 1,
+          "timeMs": 63167
+        },
+        "essaouira-1": {
+          "stars": 1,
+          "timeMs": 51829
+        }
+      },
+      "arenaWins": 1,
+      "arenaLosses": 1,
+      "totalStars": 10,
+      "playMinutes": 252,
+      "createdAt": "2026-10-05T14:00:00Z",
+      "simulated": true
+    },
+    {
+      "id": "sim-11",
+      "nickname": "Hiba",
+      "age": 13,
+      "heroId": "light",
+      "mode": "expert",
+      "levels": {
+        "volcano-0": {
+          "stars": 2,
+          "timeMs": 36050
+        },
+        "volcano-1": {
+          "stars": 1,
+          "timeMs": 59986
+        },
+        "volcano-2": {
+          "stars": 2,
+          "timeMs": 59483
+        },
+        "volcano-arena": {
+          "stars": 3,
+          "timeMs": 66708,
+          "won": true
+        },
+        "essaouira-0": {
+          "stars": 2,
+          "timeMs": 33628
+        },
+        "essaouira-1": {
+          "stars": 1,
+          "timeMs": 34696
+        },
+        "essaouira-2": {
+          "stars": 3,
+          "timeMs": 50454
+        },
+        "essaouira-arena": {
+          "stars": 3,
+          "timeMs": 83519,
+          "won": true
+        },
+        "atlas-0": {
+          "stars": 2,
+          "timeMs": 59366
+        },
+        "atlas-1": {
+          "stars": 3,
+          "timeMs": 38580
+        },
+        "atlas-2": {
+          "stars": 3,
+          "timeMs": 29513
+        },
+        "atlas-arena": {
+          "stars": 3,
+          "timeMs": 48448,
+          "won": true
+        }
+      },
+      "arenaWins": 8,
+      "arenaLosses": 2,
+      "totalStars": 28,
+      "playMinutes": 746,
+      "createdAt": "2026-09-25T18:00:00Z",
+      "simulated": true
+    },
+    {
+      "id": "sim-12",
+      "nickname": "Omar",
+      "age": 12,
+      "heroId": "water",
+      "mode": "expert",
+      "levels": {
+        "volcano-0": {
+          "stars": 3,
+          "timeMs": 45112
+        },
+        "volcano-1": {
+          "stars": 3,
+          "timeMs": 52032
+        },
+        "volcano-2": {
+          "stars": 1,
+          "timeMs": 51310
+        }
+      },
+      "arenaWins": 8,
+      "arenaLosses": 8,
+      "totalStars": 7,
+      "playMinutes": 837,
+      "createdAt": "2026-10-21T13:00:00Z",
+      "simulated": true
+    }
+  ],
+  "matches": [
+    {
+      "id": "m-001",
+      "profileId": "sim-10",
+      "heroId": "light",
+      "opponent": "water",
+      "arena": "essaouira",
+      "result": "win",
+      "durationMs": 126976,
+      "date": "2026-11-13"
+    },
+    {
+      "id": "m-002",
+      "profileId": "sim-04",
+      "heroId": "light",
+      "opponent": "water",
+      "arena": "medina",
+      "result": "win",
+      "durationMs": 76604,
+      "date": "2026-11-12"
+    },
+    {
+      "id": "m-003",
+      "profileId": "sim-01",
+      "heroId": "light",
+      "opponent": "fire",
+      "arena": "atlas",
+      "result": "win",
+      "durationMs": 63970,
+      "date": "2026-11-04"
+    },
+    {
+      "id": "m-004",
+      "profileId": "sim-12",
+      "heroId": "water",
+      "opponent": "light",
+      "arena": "atlas",
+      "result": "win",
+      "durationMs": 135980,
+      "date": "2026-11-12"
+    },
+    {
+      "id": "m-005",
+      "profileId": "sim-06",
+      "heroId": "earth",
+      "opponent": "wind",
+      "arena": "volcano",
+      "result": "win",
+      "durationMs": 43389,
+      "date": "2026-11-04"
+    },
+    {
+      "id": "m-006",
+      "profileId": "sim-08",
+      "heroId": "water",
+      "opponent": "water",
+      "arena": "atlas",
+      "result": "win",
+      "durationMs": 93262,
+      "date": "2026-11-10"
+    },
+    {
+      "id": "m-007",
+      "profileId": "sim-10",
+      "heroId": "light",
+      "opponent": "fire",
+      "arena": "merzouga",
+      "result": "lose",
+      "durationMs": 75089,
+      "date": "2026-11-13"
+    },
+    {
+      "id": "m-008",
+      "profileId": "sim-11",
+      "heroId": "light",
+      "opponent": "fire",
+      "arena": "volcano",
+      "result": "win",
+      "durationMs": 132538,
+      "date": "2026-11-12"
+    },
+    {
+      "id": "m-009",
+      "profileId": "sim-04",
+      "heroId": "light",
+      "opponent": "earth",
+      "arena": "essaouira",
+      "result": "win",
+      "durationMs": 133433,
+      "date": "2026-11-11"
+    },
+    {
+      "id": "m-010",
+      "profileId": "sim-06",
+      "heroId": "earth",
+      "opponent": "fire",
+      "arena": "merzouga",
+      "result": "win",
+      "durationMs": 82610,
+      "date": "2026-11-12"
+    },
+    {
+      "id": "m-011",
+      "profileId": "sim-02",
+      "heroId": "light",
+      "opponent": "water",
+      "arena": "essaouira",
+      "result": "win",
+      "durationMs": 33610,
+      "date": "2026-11-03"
+    },
+    {
+      "id": "m-012",
+      "profileId": "sim-10",
+      "heroId": "light",
+      "opponent": "earth",
+      "arena": "essaouira",
+      "result": "lose",
+      "durationMs": 138332,
+      "date": "2026-11-10"
+    },
+    {
+      "id": "m-013",
+      "profileId": "sim-08",
+      "heroId": "water",
+      "opponent": "wind",
+      "arena": "essaouira",
+      "result": "lose",
+      "durationMs": 101864,
+      "date": "2026-11-03"
+    },
+    {
+      "id": "m-014",
+      "profileId": "sim-01",
+      "heroId": "light",
+      "opponent": "fire",
+      "arena": "volcano",
+      "result": "lose",
+      "durationMs": 128237,
+      "date": "2026-11-03"
+    },
+    {
+      "id": "m-015",
+      "profileId": "sim-07",
+      "heroId": "earth",
+      "opponent": "water",
+      "arena": "essaouira",
+      "result": "win",
+      "durationMs": 63008,
+      "date": "2026-11-04"
+    },
+    {
+      "id": "m-016",
+      "profileId": "sim-05",
+      "heroId": "wind",
+      "opponent": "light",
+      "arena": "essaouira",
+      "result": "lose",
+      "durationMs": 72728,
+      "date": "2026-11-05"
+    },
+    {
+      "id": "m-017",
+      "profileId": "sim-09",
+      "heroId": "earth",
+      "opponent": "earth",
+      "arena": "essaouira",
+      "result": "win",
+      "durationMs": 126983,
+      "date": "2026-11-06"
+    },
+    {
+      "id": "m-018",
+      "profileId": "sim-08",
+      "heroId": "water",
+      "opponent": "light",
+      "arena": "medina",
+      "result": "win",
+      "durationMs": 138414,
+      "date": "2026-11-09"
+    },
+    {
+      "id": "m-019",
+      "profileId": "sim-03",
+      "heroId": "water",
+      "opponent": "light",
+      "arena": "essaouira",
+      "result": "lose",
+      "durationMs": 96918,
+      "date": "2026-11-01"
+    },
+    {
+      "id": "m-020",
+      "profileId": "sim-08",
+      "heroId": "water",
+      "opponent": "water",
+      "arena": "medina",
+      "result": "win",
+      "durationMs": 131716,
+      "date": "2026-11-13"
+    },
+    {
+      "id": "m-021",
+      "profileId": "sim-03",
+      "heroId": "water",
+      "opponent": "water",
+      "arena": "essaouira",
+      "result": "win",
+      "durationMs": 111146,
+      "date": "2026-11-12"
+    },
+    {
+      "id": "m-022",
+      "profileId": "sim-02",
+      "heroId": "light",
+      "opponent": "light",
+      "arena": "volcano",
+      "result": "win",
+      "durationMs": 119434,
+      "date": "2026-11-09"
+    },
+    {
+      "id": "m-023",
+      "profileId": "sim-09",
+      "heroId": "earth",
+      "opponent": "light",
+      "arena": "merzouga",
+      "result": "win",
+      "durationMs": 103439,
+      "date": "2026-11-01"
+    },
+    {
+      "id": "m-024",
+      "profileId": "sim-04",
+      "heroId": "light",
+      "opponent": "water",
+      "arena": "atlas",
+      "result": "win",
+      "durationMs": 131221,
+      "date": "2026-11-02"
+    },
+    {
+      "id": "m-025",
+      "profileId": "sim-09",
+      "heroId": "earth",
+      "opponent": "earth",
+      "arena": "medina",
+      "result": "win",
+      "durationMs": 129613,
+      "date": "2026-11-02"
+    },
+    {
+      "id": "m-026",
+      "profileId": "sim-08",
+      "heroId": "water",
+      "opponent": "wind",
+      "arena": "medina",
+      "result": "lose",
+      "durationMs": 109447,
+      "date": "2026-11-09"
+    },
+    {
+      "id": "m-027",
+      "profileId": "sim-04",
+      "heroId": "light",
+      "opponent": "wind",
+      "arena": "merzouga",
+      "result": "lose",
+      "durationMs": 99898,
+      "date": "2026-11-13"
+    },
+    {
+      "id": "m-028",
+      "profileId": "sim-08",
+      "heroId": "water",
+      "opponent": "light",
+      "arena": "essaouira",
+      "result": "lose",
+      "durationMs": 98578,
+      "date": "2026-11-05"
+    },
+    {
+      "id": "m-029",
+      "profileId": "sim-09",
+      "heroId": "earth",
+      "opponent": "water",
+      "arena": "merzouga",
+      "result": "win",
+      "durationMs": 84609,
+      "date": "2026-11-02"
+    },
+    {
+      "id": "m-030",
+      "profileId": "sim-07",
+      "heroId": "earth",
+      "opponent": "earth",
+      "arena": "atlas",
+      "result": "win",
+      "durationMs": 117969,
+      "date": "2026-11-04"
+    },
+    {
+      "id": "m-031",
+      "profileId": "sim-07",
+      "heroId": "earth",
+      "opponent": "fire",
+      "arena": "essaouira",
+      "result": "lose",
+      "durationMs": 69685,
+      "date": "2026-11-13"
+    },
+    {
+      "id": "m-032",
+      "profileId": "sim-02",
+      "heroId": "light",
+      "opponent": "water",
+      "arena": "atlas",
+      "result": "win",
+      "durationMs": 63175,
+      "date": "2026-11-03"
+    },
+    {
+      "id": "m-033",
+      "profileId": "sim-08",
+      "heroId": "water",
+      "opponent": "water",
+      "arena": "volcano",
+      "result": "win",
+      "durationMs": 93866,
+      "date": "2026-11-03"
+    },
+    {
+      "id": "m-034",
+      "profileId": "sim-11",
+      "heroId": "light",
+      "opponent": "water",
+      "arena": "essaouira",
+      "result": "lose",
+      "durationMs": 86560,
+      "date": "2026-11-09"
+    },
+    {
+      "id": "m-035",
+      "profileId": "sim-07",
+      "heroId": "earth",
+      "opponent": "wind",
+      "arena": "merzouga",
+      "result": "win",
+      "durationMs": 76742,
+      "date": "2026-11-06"
+    },
+    {
+      "id": "m-036",
+      "profileId": "sim-02",
+      "heroId": "light",
+      "opponent": "wind",
+      "arena": "volcano",
+      "result": "win",
+      "durationMs": 102620,
+      "date": "2026-11-08"
+    },
+    {
+      "id": "m-037",
+      "profileId": "sim-08",
+      "heroId": "water",
+      "opponent": "fire",
+      "arena": "merzouga",
+      "result": "win",
+      "durationMs": 97821,
+      "date": "2026-11-10"
+    },
+    {
+      "id": "m-038",
+      "profileId": "sim-05",
+      "heroId": "wind",
+      "opponent": "light",
+      "arena": "volcano",
+      "result": "win",
+      "durationMs": 133332,
+      "date": "2026-11-04"
+    },
+    {
+      "id": "m-039",
+      "profileId": "sim-02",
+      "heroId": "light",
+      "opponent": "fire",
+      "arena": "atlas",
+      "result": "win",
+      "durationMs": 35188,
+      "date": "2026-11-13"
+    },
+    {
+      "id": "m-040",
+      "profileId": "sim-03",
+      "heroId": "water",
+      "opponent": "wind",
+      "arena": "essaouira",
+      "result": "win",
+      "durationMs": 118601,
+      "date": "2026-11-05"
+    }
+  ],
+  "settings": {
+    "lang": "fr",
+    "dailyLimitMin": 60,
+    "mode": "easy",
+    "sound": true,
+    "onlineEnabled": false
+  }
+}
