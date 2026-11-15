@@ -39,7 +39,7 @@ export class Character {
   private constructor(readonly scene: Scene, readonly hero: HeroDef, root: TransformNode) {
     this.root = root;
     const c = col3(hero.color);
-    this.light = new PointLight(`aura-light-${hero.id}`, new Vector3(0, 1.1, -0.6), scene);
+    this.light = new PointLight(`aura-light-${hero.id}`, new Vector3(0, 1.1 * hero.scale, -0.6), scene);
     this.light.parent = root;
     this.light.diffuse = c;
     this.light.intensity = 3;
@@ -49,7 +49,7 @@ export class Character {
     this.aura.particleTexture = new Texture('textures/spark1.png', scene);
     this.aura.emitter = root as unknown as AbstractMesh;
     this.aura.minEmitBox = new Vector3(-0.35, 0.1, -0.2);
-    this.aura.maxEmitBox = new Vector3(0.35, 1.6, 0.2);
+    this.aura.maxEmitBox = new Vector3(0.35 * hero.scale, 1.6 * hero.scale, 0.2);
     this.aura.color1 = new Color4(c.r, c.g, c.b, 0.9);
     this.aura.color2 = Color4.FromColor3(col3(hero.accent), 0.7);
     this.aura.colorDead = new Color4(c.r, c.g, c.b, 0);
@@ -57,7 +57,7 @@ export class Character {
     this.aura.minLifeTime = 0.3; this.aura.maxLifeTime = 0.8;
     this.aura.emitRate = 40;
     this.aura.blendMode = ParticleSystem.BLENDMODE_ADD;
-    this.aura.gravity = new Vector3(0, hero.id === 'earth' ? -1 : 1.5, 0);
+    this.aura.gravity = new Vector3(0, hero.element === 'earth' ? -1 : 1.5, 0);
     this.aura.direction1 = new Vector3(-0.3, 0.6, -0.3);
     this.aura.direction2 = new Vector3(0.3, 1.2, 0.3);
     this.aura.minEmitPower = 0.2; this.aura.maxEmitPower = 0.6;
@@ -73,7 +73,7 @@ export class Character {
 
     // Normalise height.
     const { min, max } = model.getHierarchyBoundingVectors(true);
-    const s = HEIGHT / Math.max(0.01, max.y - min.y);
+    const s = (HEIGHT * hero.scale) / Math.max(0.01, max.y - min.y);
     model.scaling.scaleInPlace(s);
     model.position.y -= min.y * s;
 

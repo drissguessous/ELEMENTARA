@@ -9,11 +9,12 @@ export interface InputState {
   jump: boolean;
   attack: boolean;
   power: boolean;
+  guard: boolean;
 }
 
 /** Edge-triggered + held input from keyboard and on-screen touch buttons (multi-touch). */
 export class Input {
-  readonly held: InputState = { left: false, right: false, jump: false, attack: false, power: false };
+  readonly held: InputState = { left: false, right: false, jump: false, attack: false, power: false, guard: false };
   private pressed = new Set<keyof InputState>();
   private onKey = (e: KeyboardEvent) => this.key(e, e.type === 'keydown');
 
@@ -37,14 +38,14 @@ export class Input {
   private key(e: KeyboardEvent, down: boolean) {
     const map: Record<string, keyof InputState> = {
       ArrowLeft: 'left', KeyA: 'left', ArrowRight: 'right', KeyD: 'right',
-      ArrowUp: 'jump', KeyW: 'jump', Space: 'jump', KeyJ: 'attack', KeyX: 'attack', KeyK: 'power', KeyC: 'power',
+      ArrowUp: 'jump', KeyW: 'jump', Space: 'jump', KeyJ: 'attack', KeyX: 'attack', KeyK: 'power', KeyC: 'power', KeyL: 'guard', ShiftLeft: 'guard', KeyV: 'guard',
     };
     const k = map[e.code];
     if (k) { this.set(k, down); e.preventDefault(); }
   }
 
   /** On-screen controls: D-pad left, actions right. Sized for thumbs. */
-  attachTouch(ui: AdvancedDynamicTexture, actions: { attack?: boolean } = {}) {
+  attachTouch(ui: AdvancedDynamicTexture, actions: { combat?: boolean } = {}) {
     const mk = (label: string, k: keyof InputState, x: number, y: number, size: number, h: number, color: string) => {
       const b = new Ellipse(`touch-${k}`);
       b.widthInPixels = b.heightInPixels = size;
@@ -69,8 +70,14 @@ export class Input {
     mk('◀', 'left', 36, -40, 120, L, 'rgba(20,13,38,0.45)');
     mk('▶', 'right', 176, -40, 120, L, 'rgba(20,13,38,0.45)');
     mk('⤒', 'jump', -36, -40, 130, R, 'rgba(60,140,255,0.45)');
-    mk('✦', 'power', -186, -40, 104, R, 'rgba(255,190,60,0.45)');
-    if (actions.attack) mk('✊', 'attack', -60, -190, 104, R, 'rgba(255,80,80,0.45)');
+    if (actions.combat) {
+      // Thumb arc: strike next to jump, special and guard above.
+      mk('✊', 'attack', -186, -36, 116, R, 'rgba(255,80,80,0.5)');
+      mk('✦', 'power', -196, -176, 96, R, 'rgba(255,190,60,0.45)');
+      mk('🛡', 'guard', -50, -196, 96, R, 'rgba(140,200,255,0.45)');
+    } else {
+      mk('✦', 'power', -186, -40, 104, R, 'rgba(255,190,60,0.45)');
+    }
   }
 
   dispose() {

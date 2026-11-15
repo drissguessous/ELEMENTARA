@@ -1,4 +1,4 @@
-import type { ElementId } from './heroes';
+import type { ElementId, HeroDef } from './heroes';
 
 export type HazardKind = 'lava' | 'water' | 'wind' | 'quicksand' | 'void';
 
@@ -17,7 +17,7 @@ export interface WorldDef {
   /** Number of parcours levels before the arena boss. */
   levels: number;
   /** Arena boss hero (opponent). */
-  boss: ElementId;
+  boss: string;
   /** World map node position (design resolution 1280x720). */
   map: { x: number; y: number };
 }
@@ -34,7 +34,7 @@ export const WORLDS: WorldDef[] = [
   { id: 'medina', element: 'light', nameKey: 'world.medina', parcoursBg: 'medina-rooftops', arenaBg: 'riad-arena',
     hazard: 'void', ground: [0xc77d4a, 0x7c4a2b], levels: 3, boss: 'light', map: { x: 1050, y: 470 } },
   { id: 'temple', element: 'all', nameKey: 'world.temple', parcoursBg: 'temple-arena', arenaBg: 'temple-arena',
-    hazard: 'void', ground: [0x8a8070, 0x4d463c], levels: 0, boss: 'light', map: { x: 640, y: 560 } },
+    hazard: 'void', ground: [0x8a8070, 0x4d463c], levels: 0, boss: 'elementar', map: { x: 640, y: 560 } },
 ];
 
 export const BACKGROUNDS = [
@@ -46,3 +46,7 @@ export const worldById = (id: string): WorldDef => WORLDS.find((w) => w.id === i
 
 /** Stable key for a level, e.g. "volcano-2". Level 0..n-1 are parcours; "volcano-arena" is the boss. */
 export const levelKey = (worldId: string, index: number | 'arena') => `${worldId}-${index}`;
+
+/** Arena chosen for a fight against this fighter (Temple for the final guardian). */
+export const worldForElement = (f: HeroDef): string =>
+  f.id === 'elementar' ? 'temple' : (WORLDS.find((w) => w.element === f.element)?.id ?? 'temple');

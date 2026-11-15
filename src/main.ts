@@ -5,7 +5,8 @@ import { ScreenOrientation } from '@capacitor/screen-orientation';
 import { Game } from './core/game';
 import { repo } from './data/repository';
 import { heroById } from './config/heroes';
-import { nav } from './screens/nav';
+import { nav, type ArenaOptions } from './screens/nav';
+import { combatScreen, fighterSelectScreen, tournamentScreen } from './screens/combat';
 import { arenaScreen } from './screens/arena';
 import { parcoursScreen } from './screens/parcours';
 import { previewScreen } from './screens/preview';
@@ -37,17 +38,20 @@ async function boot() {
   Object.assign(nav, {
     game,
     title: () => game.go(titleScreen),
-    heroSelect: (next: 'map' | 'arena') => game.go((g) => heroSelectScreen(g, next)),
+    heroSelect: () => game.go(heroSelectScreen),
     map: () => game.go(mapScreen),
     parcours: guard((w: string, l: number) => game.go((g) => parcoursScreen(g, w, l))),
-    arena: guard((w: string, o?: string, free?: boolean) => game.go((g) => arenaScreen(g, w, o, free))),
+    arena: guard((o: ArenaOptions) => game.go((g) => arenaScreen(g, o))),
+    combat: () => game.go(combatScreen),
+    tournament: () => game.go(tournamentScreen),
+    fighterSelect: (step: 'me' | 'foe', mode: 'tournament' | 'free') => game.go((g) => fighterSelectScreen(g, step, mode)),
     result: (r) => game.go((g) => resultScreen(g, r)),
     leaderboard: () => game.go(leaderboardScreen),
     parents: () => game.go(parentsScreen),
     limit: () => game.go(limitScreen),
   } satisfies typeof nav);
 
-  // Deep links for demos / QA: ?screen=parcours&world=volcano&level=0 | ?screen=arena&world=atlas | ?demo=1
+  // Deep links for demos / QA: ?screen=parcours&world=volcano&level=0 | ?screen=arena&me=fire&opponent=magmor | ?screen=tournament&demo=1
   const q = new URLSearchParams(location.search);
   if (q.get('demo') === '1') repo.loadDemo();
   if (q.get('hero')) repo.setHero(q.get('hero')!);
@@ -56,8 +60,11 @@ async function boot() {
   const screen = q.get('screen');
   const world = q.get('world') ?? 'volcano';
   if (screen === 'parcours') nav.parcours(world, Number(q.get('level') ?? 0));
-  else if (screen === 'arena') nav.arena(world, q.get('opponent') ?? undefined, true);
-  else if (screen === 'select') nav.heroSelect('map');
+  else if (screen === 'arena') nav.arena({ mode: 'free', worldId: q.get('world') ?? undefined, me: q.get('me') ?? undefined, foe: q.get('opponent') ?? undefined });
+  else if (screen === 'select') nav.heroSelect();
+  else if (screen === 'combat') nav.combat();
+  else if (screen === 'tournament') nav.tournament();
+  else if (screen === 'fighters') nav.fighterSelect('me', 'free');
   else if (screen === 'map') nav.map();
   else if (screen === 'board') nav.leaderboard();
   else if (screen === 'parents') nav.parents();

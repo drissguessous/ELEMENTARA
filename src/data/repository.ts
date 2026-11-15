@@ -21,6 +21,10 @@ export interface Profile {
   playMinutes: number;
   createdAt: string;
   simulated?: boolean;
+  /** Combat mode: fighter currently used (any unlocked fighter). */
+  fighterId?: string;
+  /** Combat mode: fighters defeated in the Guardians' Tournament (each one becomes playable). */
+  beaten?: string[];
 }
 
 export interface MatchRecord {
@@ -103,6 +107,22 @@ class Repository {
     this.setActiveProfile(list[(i + 1) % list.length].id);
   }
   setHero(heroId: string) { this.profile().heroId = heroId; this.save(); }
+
+  // ---- Combat mode
+  fighterId(): string { return this.profile().fighterId ?? this.profile().heroId; }
+  setFighter(id: string) { this.profile().fighterId = id; this.save(); }
+  beaten(): string[] { return this.profile().beaten ?? []; }
+  /** Heroes are always playable; tournament opponents once defeated. */
+  isUnlocked(id: string, heroIds: string[]) { return heroIds.includes(id) || this.beaten().includes(id); }
+  /** Returns true if this win unlocked a new fighter. */
+  recordTournamentWin(opponentId: string): boolean {
+    const p = this.profile();
+    p.beaten ??= [];
+    if (p.beaten.includes(opponentId)) return false;
+    p.beaten.push(opponentId);
+    this.save();
+    return true;
+  }
 
   isDone(levelKey: string) { return !!this.profile().levels[levelKey]; }
 

@@ -145,6 +145,7 @@ export async function parcoursScreen(game: Game, worldId: string, levelIndex: nu
 
   const camPos = new Vector3(0, 2.7, -9.2);
   const camTarget = new Vector3(0, 1.2, 0);
+  const camLook = new Vector3(0, 1.2, 0);
 
   const loseHeart = (reason: Color3) => {
     if (invuln > 0) return;
@@ -260,7 +261,8 @@ export async function parcoursScreen(game: Game, worldId: string, levelIndex: nu
     camTarget.set(body.x + ch_facing() * 1.6, Math.max(0.8, body.y + 1.2), 0);
     camPos.set(camTarget.x - 0.6, camTarget.y + 1.5, -9.2);
     camera.position = Vector3.Lerp(camera.position, camPos, Math.min(1, dt * 5));
-    camera.setTarget(Vector3.Lerp(camera.getTarget(), camTarget, Math.min(1, dt * 6)));
+    camLook.copyFrom(Vector3.Lerp(camLook, camTarget, Math.min(1, dt * 6)));
+    camera.setTarget(camLook);
     view.update(dt, camera.position.x);
 
     if (toastT > 0) { toastT -= dt; toast.alpha = Math.min(1, toastT * 2); }

@@ -12,15 +12,19 @@ Mobile d'abord (Android et iOS via Capacitor), jouable aussi dans le navigateur.
 | Android | Page [Releases → latest-android](https://github.com/drissguessous/ELEMENTARA/releases/tag/latest-android) → télécharger `Elementara.apk` → installer |
 | iOS | `npm run ios` sur un Mac avec Xcode (compte Apple Developer requis pour l'App Store) |
 
-**Commandes :** ◀ ▶ se déplacer, ⤒ sauter, ✦ pouvoir du héros, ✊ frapper (arène). Au clavier : flèches, Espace, J (frapper), K (pouvoir).
+**Commandes :** ◀ ▶ se déplacer, ⤒ sauter, ✦ pouvoir / attaque spéciale, ✊ frapper (3 appuis = combo), 🛡 se protéger. Au clavier : flèches, Espace, J (frapper), K (spéciale), L (garde).
 
-Liens directs utiles pour les démos : `?screen=parcours&world=volcano&level=0`, `?screen=arena&world=essaouira`, `?screen=board&demo=1`, `?demo=1` (charge les données simulées).
+Liens directs utiles pour les démos : `?screen=parcours&world=volcano&level=0`, `?screen=arena&me=fire&opponent=magmor`, `?screen=tournament&demo=1`, `?screen=fighters&demo=1`, `?screen=board&demo=1`, `?demo=1` (charge les données simulées).
 
 ## Contenu de la version 0.1
 
 - **5 héros** (Ignis/Feu, Marina/Eau, Zephyr/Vent, Tarek/Terre, Nour/Lumière), chacun avec un pouvoir de parcours et un projectile d'arène.
 - **5 royaumes × 3 parcours + 1 arène de gardien**, puis le Temple. Niveaux générés de façon déterministe (identiques sur tous les appareils), obstacles propres à chaque monde : geysers de feu, eau, courants de vent, sables mouvants, plateformes mobiles, rochers à briser.
-- **Arène 1 contre 1** contre une IA (deux niveaux de difficulté), sans aucune violence réaliste : les KO sont des explosions de lumière.
+- **Mode Combat** : **20 combattants** (les 5 héros + 15 adversaires, des apprentis aux gardiens élémentaires) avec une difficulté croissante ([docs/ROSTER.md](docs/ROSTER.md)).
+  - **Tournoi des Gardiens** : 19 combats du plus facile au plus fort ; chaque adversaire battu devient jouable.
+  - **Combat libre** : n'importe quel combattant débloqué contre n'importe quel autre.
+  - Combos en 3 coups, garde avec jauge (garde brisée), 7 attaques spéciales (trait, triple trait, bombe en cloche, vague au sol, charge, explosion, orbe chercheur), IA dont la force suit le niveau de l'adversaire.
+  - Sans aucune violence réaliste : les KO sont des explosions de lumière, et l'arène est fermée par des barrières (pas de chute hors du terrain).
 - **Espace parents** protégé par une question : limite de temps de jeu quotidienne, mode Simplifié (8-11 ans) ou Expert (12-16 ans), son, langue (FR/EN). Jeu en ligne désactivé.
 - **Aucune donnée ne quitte le téléphone** : pas de compte, pas de publicité, pas de chat, pas d'achat.
 - **Base de données de simulation** (`src/data/simulation/seed.json`) : 12 joueurs fictifs, progression, 40 matchs — pour les démos, les réunions R&D et les tests front-end (Espace parents → « Charger les données de démo »).
@@ -43,7 +47,7 @@ npm run ios        # build + ouverture dans Xcode (Mac)
 |---|---|
 | [src/core](src/core) | moteur (Babylon.js), rendu réaliste (éclairage HDR, ombres, bloom, tone mapping ACES), interface, commandes tactiles |
 | [src/game](src/game) | personnages, physique de plateforme, génération des niveaux, décors, effets |
-| [src/screens](src/screens) | écrans : titre, choix du héros, carte, parcours, arène, résultats, classement, parents |
+| [src/screens](src/screens) | écrans : titre, choix du héros, carte, parcours, arène, mode Combat (tournoi, combat libre, sélection), résultats, classement, parents |
 | [src/config](src/config) | héros et mondes (statistiques, pouvoirs, décors) |
 | [src/data](src/data) | sauvegarde locale et données de simulation |
 | [public/assets](public/assets) | visuels du jeu (dérivés de `art/original`) |
@@ -58,6 +62,7 @@ npm run ios        # build + ouverture dans Xcode (Mac)
 
 ## Documentation
 
+- [docs/ROSTER.md](docs/ROSTER.md) : les 20 combattants, leur niveau et les prompts Midjourney des 15 nouveaux
 - [docs/ASSET_PIPELINE.md](docs/ASSET_PIPELINE.md) : de l'image au personnage 3D animé dans le jeu
 - [docs/FREE_TOOLS.md](docs/FREE_TOOLS.md) : outils et bibliothèques gratuits (3D, animation, vidéo, photo, son)
 - [docs/CREDITS.md](docs/CREDITS.md) : licences des éléments tiers

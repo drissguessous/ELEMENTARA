@@ -49,8 +49,8 @@ export function titleScreen(game: Game): Screen {
   ui.addControl(tag);
 
   const menu = new StackPanel(); menu.spacing = 16; place(menu, 0, 110);
-  menu.addControl(button(t('title.play'), () => nav.heroSelect('map'), { primary: true, w: 340, h: 72, size: 30 }));
-  menu.addControl(button(t('title.arena'), () => nav.heroSelect('arena'), { w: 340 }));
+  menu.addControl(button(t('title.play'), () => nav.heroSelect(), { primary: true, w: 340, h: 72, size: 30 }));
+  menu.addControl(button('⚔ ' + t('title.combat'), () => nav.combat(), { w: 340 }));
   menu.addControl(button(t('title.leaderboard'), () => nav.leaderboard(), { w: 340 }));
   ui.addControl(menu);
 
@@ -74,7 +74,7 @@ export function titleScreen(game: Game): Screen {
 }
 
 // ---------------------------------------------------------------- Hero select
-export function heroSelectScreen(game: Game, next: 'map' | 'arena'): Screen {
+export function heroSelectScreen(game: Game): Screen {
   const { scene, ui } = guiScene(game);
   bgImage(ui, 'assets/bg/riad-arena.webp', 0.55);
   backButton(ui, () => nav.title());
@@ -137,8 +137,7 @@ export function heroSelectScreen(game: Game, next: 'map' | 'arena'): Screen {
 
   const go = button(t('select.confirm'), () => {
     repo.setHero(current.id);
-    if (next === 'map') nav.map();
-    else nav.arena(WORLDS[Math.floor(Math.random() * 5)].id, undefined, true);
+    nav.map();
   }, { primary: true, w: 280, h: 68, size: 28 });
   place(go, 230, 190);
   ui.addControl(go);
@@ -176,7 +175,7 @@ export function mapScreen(game: Game): Screen {
     }
     const arenaOpen = repo.isDone(levelKey(w.id, w.levels - 1));
     const ab = button(`⚔ ${t('map.arena')}${repo.isDone(levelKey(w.id, 'arena')) ? ' ✓' : arenaOpen ? '' : ' 🔒'}`,
-      () => arenaOpen && nav.arena(w.id), { w: 380, h: 50, size: 22, primary: arenaOpen });
+      () => arenaOpen && nav.arena({ mode: 'story', worldId: w.id }), { w: 380, h: 50, size: 22, primary: arenaOpen });
     ab.alpha = arenaOpen ? 1 : 0.45; st.addControl(ab);
   };
 
@@ -194,7 +193,7 @@ export function mapScreen(game: Game): Screen {
     const label = text(t(w.nameKey), 18, open ? '#fff' : '#aaa'); place(label, w.map.x - 640, w.map.y - 360 + 26);
     ui.addControl(label);
   });
-  const temple = button(`✦ ${t('world.temple')}`, () => (allArenas ? nav.arena('temple') : (lock.text = t('map.templeLocked'))), { w: 320, h: 56, primary: allArenas });
+  const temple = button(`✦ ${t('world.temple')}`, () => (allArenas ? nav.arena({ mode: 'story', worldId: 'temple' }) : (lock.text = t('map.templeLocked'))), { w: 320, h: 56, primary: allArenas });
   place(temple, 0, -30, Control.HORIZONTAL_ALIGNMENT_CENTER, Control.VERTICAL_ALIGNMENT_BOTTOM);
   ui.addControl(temple);
   const lock = text('', 22, '#ffb3b3'); place(lock, 0, -100, Control.HORIZONTAL_ALIGNMENT_CENTER, Control.VERTICAL_ALIGNMENT_BOTTOM);
@@ -215,17 +214,22 @@ export function resultScreen(game: Game, r: ResultInfo): Screen {
   if (r.win && r.stars) st.addControl(text('★'.repeat(r.stars) + '☆'.repeat(3 - r.stars), 64, GOLD));
   if (r.total) st.addControl(text(`★ ${r.collected}/${r.total}`, 24, '#fff'));
   st.addControl(text(`${t('result.time')} : ${fmt(r.timeMs / 1000)}`, 24, '#fff'));
+  if (r.unlocked) {
+    const u = heroById(r.unlocked);
+    st.addControl(text(`${t('combat.unlocked')}  ${u.name}`, 26, hex(u.accent)));
+  }
   const row = new StackPanel(); row.isVertical = false; row.spacing = 16; row.heightInPixels = 70; row.paddingTopInPixels = 10;
-  const retry = () => (r.kind === 'arena' ? nav.arena(r.worldId, undefined, r.free) : nav.parcours(r.worldId, r.level));
+  const a = r.arena;
+  const retry = () => (a ? nav.arena(a) : nav.parcours(r.worldId, r.level));
   const world = worldById(r.worldId);
+  const back = () => (a?.mode === 'tournament' ? nav.tournament() : a?.mode === 'free' ? nav.combat() : nav.map());
   const next = () => {
-    if (r.free) return nav.title();
-    if (r.kind === 'parcours' && r.level + 1 < world.levels) return nav.parcours(r.worldId, r.level + 1);
-    if (r.kind === 'parcours') return nav.arena(r.worldId);
-    return nav.map();
+    if (a) return back();
+    if (r.level + 1 < world.levels) return nav.parcours(r.worldId, r.level + 1);
+    return nav.arena({ mode: 'story', worldId: r.worldId });
   };
   row.addControl(button(t('result.retry'), retry, { w: 160 }));
-  row.addControl(button(t('result.map'), () => (r.free ? nav.title() : nav.map()), { w: 160 }));
+  row.addControl(button(a && a.mode !== 'story' ? t('common.back') : t('result.map'), back, { w: 160 }));
   if (r.win) row.addControl(button(t('result.next'), next, { w: 180, primary: true }));
   st.addControl(row);
   return done(scene);
@@ -247,11 +251,11 @@ export function leaderboardScreen(game: Game): Screen {
     [0.1, 0.12, 0.38, 0.2, 0.2].forEach((c) => row.addColumnDefinition(c));
     const cell = (v: string, c: number, color = '#fff') => { const tb = new TextBlock(undefined, v); tb.color = color; tb.fontSize = 22; row.addControl(tb, 0, c); };
     cell(`${i + 1}`, 0, i < 3 ? GOLD : '#ccc');
-    const img = new Image(undefined, `assets/portraits/${heroById(p.heroId).id}.png`); img.stretch = Image.STRETCH_UNIFORM; img.heightInPixels = 44;
+    const img = new Image(undefined, `assets/portraits/${p.heroId}.png`); img.stretch = Image.STRETCH_UNIFORM; img.heightInPixels = 44;
     row.addControl(img, 0, 1);
     cell(p.nickname + (p.id === repo.profile().id ? '  ◀' : ''), 2);
     cell(`★ ${p.totalStars}`, 3, GOLD);
-    cell(`⚔ ${p.arenaWins}`, 4);
+    cell(`🏆 ${(p.beaten ?? []).length}/19`, 4);
     st.addControl(row);
   });
   if (list.some((p) => p.simulated)) {
